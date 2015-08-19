@@ -1,0 +1,31 @@
+---
+layout: default
+title: Hello World!
+tagline: Supporting tagline
+---
+{% include JB/setup %}
+
+{% for post in site.posts limit:10  %}
+
+    <div class="blog_left">
+        <a href="single.html" class="mask"><img src="{{ post.image }}" alt="image" class="img-responsive zoom-img"></a>
+        <h2><a href="{{ post.url }}"> {{ post.title }} </a></h2>
+        <h3>{{ post.date | date_to_string }}</h3>
+        <p>{{ post.excerpt }}</p>
+    </div>
+    
+{% endfor %}
+
+
+          <ul class="dc_pagination dc_paginationA dc_paginationA06">
+            <li class="prev"> </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">19</a></li>
+            <li class="next"> </li>
+            <div class="clearfix"> </div>
+           </ul>
