@@ -1,0 +1,11 @@
+        {% for post in site.posts limit:3 %}
+        <ul class="list1 list2">
+          
+          <li class="list1_img"><a href="{{post.url}}"><img src="{{site.cloud.th}}{{ post.image}}" class="img-responsive" alt="{{post.title}}"/></a></li>
+          <li class="list1_desc">
+            <a href="{{ post.url}}"><p class="m_3">{{ post.title | truncate: 20 ) }}</p></a>
+            <p class="m_2">{{post.date | date_to_long_string }}</p>
+          </li>
+          <div class="clearfix"> </div>
+        </ul>
+        {% endfor %}

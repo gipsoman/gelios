@@ -1,0 +1,8 @@
+{% for post in ps_list %}
+
+
+{% if post.tags.size == 4 %}
+{{ post.tile }}
+{% endif %}
+
+{% endfor %}

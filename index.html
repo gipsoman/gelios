@@ -2,30 +2,52 @@
 layout: default
 title: Hello World!
 tagline: Supporting tagline
+
 ---
 {% include JB/setup %}
 
-{% for post in site.posts limit:10  %}
 
-    <div class="blog_left">
-        <a href="single.html" class="mask"><img src="{{ post.image }}" alt="image" class="img-responsive zoom-img"></a>
+
+
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <div class="blog_left">
         <h2><a href="{{ post.url }}"> {{ post.title }} </a></h2>
         <h3>{{ post.date | date_to_string }}</h3>
+        <a href="{{post.url}}" class="mask"><img src="{{ site.cloud.full }}{{ post.image }}" alt="image" class="img-responsive zoom-img"></a>
         <p>{{ post.excerpt }}</p>
     </div>
-    
 {% endfor %}
 
+             
 
-          <ul class="dc_pagination dc_paginationA dc_paginationA06">
-            <li class="prev"> </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">...</a></li>
-            <li><a href="#">19</a></li>
-            <li class="next"> </li>
-            <div class="clearfix"> </div>
-           </ul>
+
+<ul class="dc_pagination dc_paginationA dc_paginationA06">
+{% if paginator.total_pages > 1 %}
+
+    <li ><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Туда</a></li>
+
+  
+
+    {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+      
+            {% elsif page == 1 %}
+                <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+            {% else %}
+                <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+ 
+    <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Сюда</a></li>
+
+
+  <div class="clearfix"> </div>
+{% endif %}
+</ul>
+
+            
+            
+            

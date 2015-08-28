@@ -1,0 +1,5 @@
+<ol>
+      {% include JB/sort_collection collection=site.posts sort_by="category" %}
+      {% assign pages_list = sort_result %}
+      {% include JB/pages2_list %}
+    </ol>

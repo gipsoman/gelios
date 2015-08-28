@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% include JB/setup %}
+
+<div class="relatedPosts">
+
+    <h3>Related post</h3>
+
+    {% for post in site.posts  %}
+
+        {% assign sameTagCount = 0 %}
+
+        {% for tag in post.tags %}
+            {% if post.tags contains tag %}
+
+              {% assign sameTagCount = sameTagCount | plus: 1 %}
+              {% assign xsw = sameTagCount.size | minus:2 %}
+
+            {% endif %}
+        {% endfor %}
+
+        {% if sameTagCount >= xsw %}
+   
+          
+          <div>
+            <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
+            {{xsw}}
+          </div>
+       
+        {% endif %}
+         
+
+
+    {% endfor %}
+
+</div>
+
+
+

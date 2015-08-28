@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% assign chec = post.tags.size  %}
+{% assign swed = site.posts | sort: 'category'  %}
+{% for asd in swed %}
+  {{ asd.title }}<span style="color:red">{{ asd.tags.size }}</span><br>
+{% endfor %}

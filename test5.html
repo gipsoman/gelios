@@ -1,0 +1,18 @@
+
+ {% assign sorted_tags = (site.tags | sort:0) %}
+
+
+{% for tag in sorted_tags %}
+<li>{{ tag | first }}</li>
+{% endfor %}
+ <div id="tags">
+    <h1>Tags</h1>
+    <ul class="tag-box inline">
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+      {% capture this_word %}{{ tag[item] | strip_newlines }}{% endcapture %}
+      <li><a href="#{{ this_word | cgi_escape }}">{{ this_word }} <span>{{ site.tags[this_word].size }}</span></a></li>
+    {% endunless %}{% endfor %}
+    </ul>
+  
+   
+</div>

@@ -1,0 +1,35 @@
+http://www.flickr.com/services/auth/?api_key=0fddd83fcf2ea70d4b1cc12aabd1704e&perms=write&api_sig=8f97edf6b84fa100c25ffccb28ac93e4
+
+eb51a83310bb845fapi_key0fddd83fcf2ea70d4b1cc12aabd1704epermswrite
+
+http://montagnik.od.ua/?frob=72157657360622179-5a2737c880c2cad5-134943838
+
+http://montagnik.od.ua/?frob=72157657821162975-0ba7f3f5c350a2e7-134943838
+
+
+
+
+MD5 8f97edf6b84fa100c25ffccb28ac93e4
+
+//api.flickr.com/services/rest/?method=flickr.auth.getToken&api_key=0fddd83fcf2ea70d4b1cc12aabd1704e&frob=72157657360622179-5a2737c880c2cad5-134fr943838&perms=write&api_sig=8f97edf6b84fa100c25ffccb28ac9o3e4
+
+
+frobMD5 6537faf7068cb4b756b1c49efb2575f7
+
+http://www.flickr.com/services/auth/?api_key=0fddd83fcf2ea70d4b1cc12aabd1704e&perms=write&api_sig=6537faf7068cb4b756b1c49efb2575f7
+
+//api.flickr.com/services/rest/?method=flickr.auth.getToken&api_key=0fddd83fcf2ea70d4b1cc12aabd1704e&frob=72157657360622179-5a2737c880c2cad5-134fr943838&perms=write&api_sig=6537faf7068cb4b756b1c49efb2575f7
+
+
+
+http://www.flickr.com/services/auth/?api_key=0fddd83fcf2ea70d4b1cc12aabd1704e&perms=write&api_sig=6537faf7068cb4b756b1c49efb2575f7
+
+
+
+	
+http://api.flickr.com/services/rest/?method=flickr.auth.getFrob&api_key=0fddd83fcf2ea70d4b1cc12aabd1704e&api_sig=8f97edf6b84fa100c25ffccb28ac93e4
+
+
+user id : 135036651@N08
+
+https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=84ad7df61b82e136a98bbf99fa997b3e&photo_id=20255481273

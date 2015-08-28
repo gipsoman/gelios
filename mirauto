@@ -1,0 +1,27 @@
+user id : 135036651@N08
+
+api_key: 0f8973f7ed6f23f0a7ba43ec3140b7c9
+
+secret: 85665cc76687483f
+
+api_sig ( 85665cc76687483fapi_key0f8973f7ed6f23f0a7ba43ec3140b7c9permswrite ) : 
+e9724158880ff7ed818516f3bda2f4db
+
+
+frob: 72157657751065826-c7b2349f2a0872df-134943838
+
+https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=0f8973f7ed6f23f0a7ba43ec3140b7c9&user_id=135036651@N08&format=json
+
+
+
+http://www.flickr.com/services/auth/?api_key=0f8973f7ed6f23f0a7ba43ec3140b7c9&perms=write&api_sig=e9724158880ff7ed818516f3bda2f4db
+
+frob=72157657751065826-c7b2349f2a0872df-134943838
+
+http://flickr.com/services/auth/?api_key=apikey&api_sig=apisig&frob=frob
+
+http://www.flickr.com/services/auth/?api_key=0f8973f7ed6f23f0a7ba43ec3140b7c9&api_sig=e9724158880ff7ed818516f3bda2f4dbfrob=72157657751065826-c7b2349f2a0872df-134943838
+
+
+
+https://api.flickr.com/services/rest/?method=flickr.auth.getToken&api_key=0f8973f7ed6f23f0a7ba43ec3140b7c9&frob=72157657751065826-c7b2349f2a0872df-134943838&format=json&nojsoncallback=1&perms=write&api_sig=e9724158880ff7ed818516f3bda2f4db

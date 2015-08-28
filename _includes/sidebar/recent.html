@@ -1,0 +1,24 @@
+           
+{% assign asd = page.tags[0] %}
+ {% for tag in site.tags %}
+    
+  {% if tag[0] == asd %}
+  
+         <h3>Recent Posts</h3>
+
+    {% assign pages_list = tag[1] %} 
+
+    {% for node in pages_list limit: 3  %}
+           <ul class="blog-list3">
+            <li class="blog-list3-img"><a href="{{ node.url }}"><img src="{{ site.cloud.th}}{{node.image}}" class="img-responsive" alt="{{node.title}}"/></a></li>
+            <li class="blog-list3-desc">
+              <h4><a href="{{node.url}}">{{ node.title | truncate: 60 }}</a></h4>
+              <p>{{ node.date | date_to_string }}</p>
+            </li>
+            <div class="clearfix"> </div>
+           </ul>
+    {% endfor %}
+  {% endif %}
+  {% endfor %}
+
+

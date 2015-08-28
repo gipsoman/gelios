@@ -1,12 +1,12 @@
  - title: Home
-   url: index.html
+   url: /index.html
 
  - title: About
-   url: about.html
+   url: /about.html
 
  - title: Blog
-   url: blog.html
+   url: /blog.html
    
  - title: Архив
-   url: archive.html
+   url: /archive.html
 

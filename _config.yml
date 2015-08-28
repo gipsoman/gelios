@@ -3,21 +3,42 @@
 permalink: /:categories/:year/:month/:title.html
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+highlighter: rouge
 
 excerpt_separator: <!--more-->
 markdown: kramdown
+paginate: 4
+paginate_path: "/:num/"
+
+flickr:
+  api_key: 84ad7df61b82e136a98bbf99fa997b3e
+
+
+
+cloud : 
+  full : http://res.cloudinary.com/droboshok/image/upload/
+  th : http://res.cloudinary.com/droboshok/image/upload/c_scale,w_200/
+  medium : http://res.cloudinary.com/droboshok/image/upload/c_scale,w_400/
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
 title : Jekyll Bootstrap
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : Andrei Amelin
+  email : droboshok@yahoo.com
+  github : droboshok
+  twitter : droboshok
+
+flickr_set:
+  gallery_tag:   'p'
+  gallery_class: 'gallery'
+  a_href:        nil
+  a_target:      '_blank'
+  image_rel:     ''
+  image_size:    's'
+  api_key: '559f413b9eac276b487710f85a2688b0'
+  
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
