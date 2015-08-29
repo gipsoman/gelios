@@ -28,8 +28,9 @@ module Jekyll
         doc = Nokogiri::HTML(open(info))
         doc.css("photo").each do |link|
           @best = {
-            :title => link['title']
-          }
+            :title => doc.css('title').inner_text,
+            :description => doc.css('description').inner_text,
+            }
 
           puts @best
         end
