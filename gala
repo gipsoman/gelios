@@ -28,3 +28,5 @@ https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=84ad
 
 
 https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=84ad7df61b82e136a98bbf99fa997b3e&photo_id=20255481273format=json&nojsoncallback=1
+
+"<a href=\"#{@f_url}\" alt=\"#{@f_info[:description]}\" media=\"#{@foto[:media]}\"><img src=\"#{@foto[:source]}\" width=\"#{@foto[:width]}\" height=\"#{@foto[:height]}\" title=\"#{@f_info[:title]}\"></a>"

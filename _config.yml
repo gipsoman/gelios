@@ -11,8 +11,8 @@ paginate: 4
 paginate_path: "/:num/"
 
 
-
-api_key : 84ad7df61b82e136a98bbf99fa997b3e
+flickr :
+  api_key : 84ad7df61b82e136a98bbf99fa997b3e
 
 
 cloud : 

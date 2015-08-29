@@ -1,49 +1,47 @@
 require 'open-uri'
 require 'nokogiri'
 module Jekyll
-  class MPTag < Liquid::Tag
+  class MainPhotoTag < Liquid::Tag
 
       def initialize(tag_name, markup, tokens)
         super
         @markup = markup
         @ft   = markup.split(' ')[0]
         @lb   = markup.split("'")[1]
-        html = 'https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=84ad7df61b82e136a98bbf99fa997b3e&photo_id='+@ft
-        info = 'https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=84ad7df61b82e136a98bbf99fa997b3e&photo_id='+@ft
-        @best = {
-          :sizes => {}
-        }
-        page = Nokogiri::HTML(open(html))
-        page.css("size[label='#{@lb}']").each do |el|
-         
-          @best = {
-            :width => el['width'],
-            :height => el['height'],
-            :source => el['source'],
-            :url => el['url'],
-            :media => el['media']
-          }
-
-        end
-        doc = Nokogiri::HTML(open(info))
-        doc.css("photo").each do |link|
-          @best = {
-            :title => doc.css('title').inner_text,
-            :description => doc.css('description').inner_text,
-            }
-
-          puts @best
+        
         end
 
         # подключаем Nokogiri
         def render(context)
-        "<a href=\"#{@best[:source]}\" width=\"800\"><img src='#{@best[:source]}'><a/>"
-        end
+          @api_key = context.registers[:site].config["flickr"]["api_key"]
+          
+          page = Nokogiri::HTML(open("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=#{@api_key}&photo_id=#{@ft}"))
+          page.css("size[label='#{@lb}']").each do |el|
+         
+            @foto = {
+              :width => el['width'],
+              :height => el['height'],
+              :source => el['source'],
+              :url => el['url'],
+              :media => el['media']
+            }
+          @f_url = page.css("size")[7]['source']
+          end
+          doc = Nokogiri::HTML(open("https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=#{@api_key}&photo_id=#{@ft}"))
+          doc.css("photo").each do |link|
+            @f_info = {
+              :title => doc.css('title').inner_text,
+              :description => doc.css('description').inner_text
+            }
+
+          end
+          
+          "<a href=\"#{@f_url}\" alt=\"#{@f_info[:title]}\" media=\"#{@foto[:media]}\"><img src=\"#{@foto[:source]}\" width=\"#{@foto[:width]}\" height=\"#{@foto[:height]}\"></a>"
       
-      end
+        end
 
   end
 end
 
-Liquid::Template.register_tag('m_p', Jekyll::MPTag)
+Liquid::Template.register_tag('main_photo', Jekyll::MainPhotoTag)
 
