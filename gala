@@ -23,6 +23,8 @@ https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=84ad
 https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=84ad7df61b82e136a98bbf99fa997b3e&photo_id=20660791020&format=json&nojsoncallback=1
 
 
+@api_key = Jekyll.configuration({})['api_key']
+
 
 
 https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=84ad7df61b82e136a98bbf99fa997b3e&photo_id=20255481273format=json&nojsoncallback=1

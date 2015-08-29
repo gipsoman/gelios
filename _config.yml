@@ -10,9 +10,9 @@ markdown: kramdown
 paginate: 4
 paginate_path: "/:num/"
 
-flickr:
-  api_key: 84ad7df61b82e136a98bbf99fa997b3e
 
+
+api_key : 84ad7df61b82e136a98bbf99fa997b3e
 
 
 cloud : 
